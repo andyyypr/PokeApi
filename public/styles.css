@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+h3 {
+  font-size: 13px;
+}
+
+.card__container {
+  margin: 20vh 10vh;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-rows: auto;
+  gap: 15px;
+}
+.card__item {
+  display: flex;
+  flex-direction: column;
+  
+  background-color: #48e;
+  padding: 5vh;
+  height: 50vh;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.data__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 12px;
+}
