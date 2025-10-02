@@ -30,6 +30,10 @@ h3 {
   text-align: center;
   transform-style: preserve-3d; /* Mantiene el contexto 3D para los hijos :cite[1] */
   transition: none; /* Remove transition for instant flip */
+  -webkit-user-select: none; /* Para Safari y Chrome */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para Internet Explorer 10+ */
+  user-select: none; /* Sintaxis estándar */
 }
 
 /* Clase que aplica el volteado - se controlará con JS */
@@ -50,25 +54,26 @@ h3 {
   border-radius: 8px;
 }
 
-/* Cara frontal visible por defecto */
 .front {
   transform: rotateY(0deg);
 }
-
-/* Cara trasera 1 - girada 120 grados */
 .back-1 {
   transform: rotateY(120deg);
 }
-
-/* Cara trasera 2 - girada 240 grados */
 .back-2 {
   transform: rotateY(240deg);
 }
+
 /* Mantén tus estilos actuales */
 .data__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.movements__list {
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 label {
