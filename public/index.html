@@ -8,20 +8,47 @@
   </head>
   <body>
     <div class="card__container">
-      <div class="card__item">
-        <p class="num_pkm">#001</p>
-        <img class="img_pkm" src="" alt="" />
-        <h2 class="name_pkm">Charmander</h2>
-        <div class="data__container">
-          <label for="weight_pkm">Weigth: </label>
-          <h3 id="weight_pkm">6.5kg</h3>
-          <label for="heigth_pkm">Heigth: </label>
-          <h3 id="heigth_pkm">0.6m</h3>
-        </div>
+      
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <!-- Front Face -->
+          <div class="card__face front">
+            <p class="num_pkm">#001</p>
+            <img class="img_pkm" src="" alt="Charmander" />
+            <h2 class="name_pkm">Charmander</h2>
+            <div class="data__container">
+              <label for="weight_pkm">Weight: </label>
+              <h3 id="weight_pkm">6.5kg</h3>
+              <label for="height_pkm">Height: </label>
+              <h3 id="height_pkm">0.6m</h3>
+            </div>
+            <label for="type_pkmn">Type: </label>
+            <h3 id="type_pkmn">Fire</h3>
+          </div>
 
-        <label for="type_pkmn">Type: </label>
-        <h3 id="type_pkmn">Fire</h3>
+          <!-- Back Face 1: Stats -->
+          <div class="card__face back-1">
+            <h2>Data</h2>
+            <h3 class="ps_pkmn">HP: 39</h3>
+            <h3 class="atk_pkmn">Attack: 52</h3>
+            <h3 class="dfs_pkmn">Defense: 43</h3>
+            <h3 class="atkSpc_pkmn">Sp. Atk: 60</h3>
+            <h3 class="dfsSpc_pkmn">Sp. Def: 50</h3>
+            <h3 class="speed_pkmn">Speed: 65</h3>
+          </div>
+
+          <!-- Back Face 2: Movements -->
+          <div class="card__face back-2">
+            <h2>Movements</h2>
+            <h3 class="mov_1 card__face2-item">Scratch</h3>
+            <h3 class="mov_2 card__face2-item">Growl</h3>
+            <h3 class="mov_3 card__face2-item">Ember</h3>
+            <h3 class="mov_4 card__face2-item">Dragon Breath</h3>
+          </div>
+        </div>
       </div>
+      
     </div>
+    <script src="./js/main.js"></script>
   </body>
 </html>

@@ -8,23 +8,63 @@ h3 {
 }
 
 .card__container {
-  margin: 20vh 10vh;
   display: grid;
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-columns: repeat(5, minmax(100px, 1fr)); /* 5 columnas */
   grid-template-rows: auto;
   gap: 15px;
+  margin: 20vh 10vh;
 }
-.card__item {
+
+/* Contenedor principal para el efecto flip */
+.flip-card {
+  background-color: transparent;
+  height: 50vh; /* Mantiene la altura de tu diseño */
+  perspective: 1000px; /* Crea el contexto 3D :cite[1] */
+}
+
+/* Contenedor interno que realiza el giro */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d; /* Mantiene el contexto 3D para los hijos :cite[1] */
+  transition: none; /* Remove transition for instant flip */
+}
+
+/* Clase que aplica el volteado - se controlará con JS */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg); /* Gira la carta :cite[1] */
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  
   background-color: #48e;
   padding: 5vh;
-  height: 50vh;
-  color: #fff;
+  color: #000;
   border-radius: 8px;
 }
 
+/* Cara frontal visible por defecto */
+.front {
+  transform: rotateY(0deg);
+}
+
+/* Cara trasera 1 - girada 120 grados */
+.back-1 {
+  transform: rotateY(120deg);
+}
+
+/* Cara trasera 2 - girada 240 grados */
+.back-2 {
+  transform: rotateY(240deg);
+}
+/* Mantén tus estilos actuales */
 .data__container {
   display: flex;
   flex-direction: row;
@@ -33,4 +73,8 @@ h3 {
 
 label {
   font-size: 12px;
+}
+
+h3 {
+  font-size: 13px;
 }
