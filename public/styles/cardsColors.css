@@ -1,0 +1,145 @@
+/* ---------------Colores Segun Tipo de Pokemon------------------*/
+/* Type Normal */
+.type_normal > .card__face{
+  border: 2px solid var(--Normal);
+}
+.type_normal > .card__face > .up_container > .color_ball{
+  background-color: var(--Normal);
+  box-shadow: 0 0 14px var(--Normal);
+}
+.type_normal > .card__face > .type__container > p {
+  color: var(--Normal);
+}
+/* Type Fire */
+.type_fire > .card__face{
+  border: 2px solid var(--Fire);
+}
+.type_fire > .card__face > .up_container > .color_ball{
+  background-color: var(--Fire);
+  box-shadow: 0 0 14px var(--Fire);
+}
+.type_fire > .card__face > .type__container > p {
+  color: var(--Fire);
+}
+/* Type Grass */
+.type_grass > .card__face{
+  border: 2px solid var(--Grass);
+}
+.type_grass > .card__face > .up_container > .color_ball{
+  background-color: var(--Grass);
+  box-shadow: 0 0 14px var(--Grass);
+}
+.type_grass > .card__face > .type__container > p {
+  color: var(--Grass);
+}
+/* Type Wather */
+.type_water > .card__face{
+  border: 2px solid var(--Wather);
+}
+.type_water > .card__face > .up_container > .color_ball{
+  background-color: var(--Wather);
+  box-shadow: 0 0 14px var(--Wather);
+}
+.type_water > .card__face > .type__container > p {
+  color: var(--Wather);
+}
+/* Type Bug */
+.type_bug > .card__face{
+  border: 2px solid var(--Bug);
+}
+.type_bug > .card__face > .up_container > .color_ball{
+  background-color: var(--Bug);
+  box-shadow: 0 0 14px var(--Bug);
+}
+.type_bug > .card__face > .type__container > p {
+  color: var(--Bug);
+}
+/* Type Electric */
+.type_electric > .card__face{
+  border: 2px solid var(--Electric);
+}
+.type_electric > .card__face > .up_container > .color_ball{
+  background-color: var(--Electric);
+  box-shadow: 0 0 14px var(--Electric);
+}
+.type_electric > .card__face > .type__container > p {
+  color: var(--Electric);
+}
+/* Type Rock */
+.type_rock > .card__face{
+  border: 2px solid var(--Rock);
+}
+.type_rock > .card__face > .up_container > .color_ball{
+  background-color: var(--Rock);
+  box-shadow: 0 0 14px var(--Rock);
+}
+.type_rock > .card__face > .type__container > p {
+  color: var(--Rock);
+}
+/* Type Ghost */
+.type_ghost > .card__face{
+  border: 2px solid var(--Ghost);
+}
+.type_ghost > .card__face > .up_container > .color_ball{
+  background-color: var(--Ghost);
+  box-shadow: 0 0 14px var(--Ghost);
+}
+.type_ghost > .card__face > .type__container > p {
+  color: var(--Ghost);
+}
+/* Type Poison */
+.type_poison > .card__face{
+  border: 2px solid var(--Poison);
+}
+.type_poison > .card__face > .up_container > .color_ball{
+  background-color: var(--Poison);
+  box-shadow: 0 0 14px var(--Poison);
+}
+.type_poison > .card__face > .type__container > p {
+  color: var(--Poison);
+}
+/* Type Psychic */
+.type_psychic > .card__face{
+  border: 2px solid var(--Psychic);
+}
+.type_psychic > .card__face > .up_container > .color_ball{
+  background-color: var(--Psychic);
+  box-shadow: 0 0 14px var(--Psychic);
+}
+.type_psychic > .card__face > .type__container > p {
+  color: var(--Psychic);
+}
+/* Type Fighting */
+.type_fighting > .card__face{
+  border: 2px solid var(--Fighting );
+}
+.type_fighting > .card__face > .up_container > .color_ball{
+  background-color: var(--Fighting);
+  box-shadow: 0 0 14px var(--Fighting);
+}
+.type_fighting > .card__face > .type__container > p {
+  color: var(--Fighting);
+}
+/* Type Ground */
+.type_ground > .card__face{
+  border: 2px solid var(--Ground);
+}
+.type_ground > .card__face > .up_container > .color_ball{
+  background-color: var(--Ground);
+  box-shadow: 0 0 14px var(--Ground);
+}
+.type_ground > .card__face > .type__container > p {
+  color: var(--Ground);
+}
+/* Type Dragon */
+.type_dragon > .card__face{
+  border: 2px solid var(--Dragon);
+}
+.type_dragon > .card__face > .up_container > .color_ball{
+  background-color: var(--Dragon);
+  box-shadow: 0 0 14px var(--Dragon);
+}
+.type_dragon > .card__face > .type__container > p {
+  color: var(--Dragon);
+}
+/* ---------------Colores Segun Tipo Ends------------------*/

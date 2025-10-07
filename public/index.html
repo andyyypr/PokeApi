@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeApi</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="styles/cardsColors.css">
   </head>
   <body>
     <div class="header__container">
@@ -13,10 +15,30 @@
       </div>
       <div class="search__container">
        <a href="#"><img src="img/icon-page-leftcirculo.png" class="page-buttom page-left"></a>
-        <div class="search_input-container"><input type="text" name="search" id="search" placeholder="Search" autocomplete="off">
+        <div class="search_input-container">
+        <input type="text" class="search_Input" id="search" placeholder="Search" autocomplete="off">
         <a href="#" class="search-buttom" role="button"><img src="https://img.icons8.com/?size=100&id=e4NkZ7kWAD7f&format=png&color=000000" alt="search"></a>
       </div>
        <a href="#"><img src="img/icon-page-rightcírculo.png" class="page-buttom page-right"></a>
+      </div>
+      <div class="filter__container">
+        <h2>Filter by type</h2>
+        <div class="fill_container">
+          <button class="fill_item t_Normal" data-type="normal">Normal</button>
+          <button class="fill_item t_Grass" data-type="grass">Grass</button>
+          <button class="fill_item t_Fire" data-type="fire">Fire</button>
+          <button class="fill_item t_Wather" data-type="water">Water</button>
+          <button class="fill_item t_Bug" data-type="bug">Bug</button>
+          <button class="fill_item t_Electric" data-type="electric">Electric</button>
+          <button class="fill_item t_Rock" data-type="rock">Rock</button>
+          <button class="fill_item t_Ghost" data-type="ghost">Ghost</button>
+          <button class="fill_item t_Poison" data-type="poison">Poison</button>
+          <button class="fill_item t_Phisic" data-type="phisic">Phisic</button>
+          <button class="fill_item t_Figthing" data-type="figthing">Figthing</button>
+          <button class="fill_item t_Ground" data-type="ground">Ground</button>
+          <button class="fill_item t_Dragon" data-type="dragon">Dragon</button>
+          <button class="goBack">seeAll</button>
+        </div>
       </div>
     </div>
     

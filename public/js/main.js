@@ -24,6 +24,12 @@ function clearContainer() {
   const container = document.querySelector(".card__container");
   container.innerHTML = "";
 }
+//Funcion para agregar clase con el tipo
+function addType(type) {
+  if (type) {
+    return `type_${type}`;
+  }
+}
 // Función para crear la card
 async function createHtmlCard(data) {
   const container = document.querySelector(".card__container");
@@ -43,16 +49,19 @@ async function createHtmlCard(data) {
       card.classList.add("flip-card");
 
       const cardInner = document.createElement("DIV");
-      cardInner.classList.add("flip-card-inner");
+      cardInner.classList.add(
+        "flip-card-inner",
+        `${addType(info.types[0].type.name)}`
+      );
 
-      //manejar los tipos(algunos tienen un solo tipo)
+      //manejar los tipos(algunos tienen dos tipos)
       const tipos = info.types.map((t) => t.type.name).join(" - ");
 
       cardInner.innerHTML = `
         <div class="card__face front">
           <div class="up_container">
             <p class="num_pkm">#${formatearNumero(info.id)}</p>
-            <div class="color_type"></div>
+            <div class="color_ball"></div>
           </div>
           
           <img class="img_pkm" src="${info.sprites.front_default}" alt="${
@@ -119,8 +128,57 @@ async function createHtmlCard(data) {
     }
   }
 }
-//
+//Funcion para buscar pkmn por su nombre
+async function getPkmnByName(name) {
+  if (name.trim() === "") {
+    clearContainer();
+    getInfoAllPkms();
+    return;
+  }
+  if (!name) return;
 
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    if (!response.ok) {
+      clearContainer();
+      return;
+    }
+
+    const data = await response.json();
+    clearContainer();
+    await createHtmlCard({
+      results: [
+        {
+          name: data.name,
+          url: `https://pokeapi.co/api/v2/pokemon/${name}`,
+        },
+      ],
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+//Funcion para filtrar pokemons por Types
+async function filterByType(type) {
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+    const data = await response.json();
+
+    const limitedPokemons = data.pokemon.slice(0, 60);
+
+    const results = limitedPokemons.map((p) => ({
+      name: p.pokemon.name,
+      url: p.pokemon.url,
+    }));
+
+    clearContainer();
+
+    await createHtmlCard({ results });
+  } catch (error) {
+    console.error(`Error al filtrar por tipo ${type}:`, error);
+    alert(`No se pudo obtener los Pokémon de tipo ${type}.`);
+  }
+}
 // Función principal para obtener los datos y crear las cards
 async function getInfoAllPkms() {
   try {
@@ -136,6 +194,10 @@ async function getInfoAllPkms() {
 document.addEventListener("DOMContentLoaded", () => {
   const pageLeft_Btm = document.querySelector(".page-left");
   const pageRight_Btm = document.querySelector(".page-right");
+  const searchBtm = document.querySelector(".search-buttom");
+  const searchInput = document.querySelector(".search_Input");
+  const filterButtons = document.querySelectorAll(".fill_item");
+  const seeAllPkmns = document.querySelector(".goBack");
 
   pageRight_Btm.addEventListener("click", function () {
     offset += limit;
@@ -150,6 +212,26 @@ document.addEventListener("DOMContentLoaded", () => {
       getInfoAllPkms();
     }
   });
+  searchBtm.addEventListener("click", async () => {
+    const name = searchInput.value.trim().toLowerCase();
+    await getPkmnByName(name);
+    pageLeft_Btm.style.display = "block";
+    pageRight_Btm.style.display = "block";
+  });
 
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const type = button.getAttribute("data-type");
+      await filterByType(type);
+      pageLeft_Btm.style.display = "none";
+      pageRight_Btm.style.display = "none";
+    });
+  });
+  seeAllPkmns.addEventListener("click", async () => {
+    clearContainer();
+    await getInfoAllPkms();
+    pageLeft_Btm.style.display = "block";
+    pageRight_Btm.style.display = "block";
+  });
   getInfoAllPkms();
 });
